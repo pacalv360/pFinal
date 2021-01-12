@@ -7,7 +7,7 @@ applications:
   instances: 1
   host: asrTomcatEjemploCloudantTranslator
   domain: mybluemix.net
-  buildpack: liberty-for-java_v3_50-20201019-1521
+  buildpack: java_buildpack
   services:
   - cloudantNoSQL-DCB
   - LanguageTranslator-mf

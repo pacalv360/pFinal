@@ -12,7 +12,7 @@ import com.google.gson.JsonParser;
 import com.ibm.cloud.sdk.core.security.Authenticator;
 import com.ibm.cloud.sdk.core.security.IamAuthenticator;
 import com.ibm.watson.text_to_speech.v1.util.WaveUtils;
-import com.ibm.watson.developer_cloud.text_to_speech.v1.util.WaveUtils;
+//import com.ibm.watson.developer_cloud.text_to_speech.v1.util.WaveUtils;
 import com.ibm.watson.text_to_speech.v1.TextToSpeech;
 import com.ibm.watson.text_to_speech.v1.model.SynthesizeOptions;
 import asr.proyectoFinal.services.ReproduceAudio;
