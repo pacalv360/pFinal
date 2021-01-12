@@ -1,0 +1,13 @@
+---
+applications:
+- name: asrTomcatEjemploCloudantTranslator
+  random-route: false
+  path: target\asrTomcatEjemploCloudantTranslator.war
+  memory: 640M
+  instances: 1
+  host: asrTomcatEjemploCloudantTranslator
+  domain: mybluemix.net
+  buildpack: liberty-for-java_v3_50-20201019-1521
+  services:
+  - cloudantNoSQL-DCB
+  - LanguageTranslator-mf

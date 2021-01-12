@@ -1,0 +1,49 @@
+//https://www.youtube.com/watch?v=39IRwZxtv9w
+//https://www.youtube.com/watch?v=2eqt8L1TyL4
+//https://github.com/watson-developer-cloud/java-sdk/blob/master/tone-analyzer/src/main/java/com/ibm/watson/tone_analyzer/v3/ToneAnalyzer.java
+// Use our Watson library.
+var ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
+
+// Require our config variables.
+var config = require('./config');
+
+// The text that we want to analyze the tone of.
+var text = "In my younger and more vulnerable years my father gave me some advice that I’ve been turning over in my mind ever since. \“Whenever you feel like criticizing any one,\” he told me, \“just remember that all the people in this world haven’t had the advantages that you’ve had.\"";
+
+// Turn our text into valid json.
+var input = { "text": text };
+
+// The format that the tone analyzer needs. 
+var params = 
+        {
+        'tone_input': input,
+        'content_type': 'application/json'
+        };
+
+// Initialize the Tone Analyzer by giving it our credentials.
+var tone_analyzer = new ToneAnalyzerV3(
+        {
+        username: config.username,
+        password: config.password,
+        version_date: '2017-09-21'
+        });
+
+// Use our Tone Analyzer variable to analyze the tone.
+tone_analyzer.tone(params, function(error, response) 
+        {
+        // There's an error.
+        if (error)
+                {
+                console.log('Error:', error);
+                }
+        // No error, we got our tone result.
+        else
+                {
+                // The tone of the text, as determined by watson.
+                var tone = JSON.stringify(response, null, 2)
+                
+                // Output Watson's tone analysis to the console.
+                console.log("The tone analysis for \'" + text + "\' is:\n");
+                console.log(tone);
+                }
+        });
